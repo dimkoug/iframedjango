@@ -1,0 +1,25 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="{% static 'bootstrap4/js/jquery-3.4.1.min.js' %}"></script>
+    <script>
+
+    $(document).ready(function(){
+      $("#frame_content").append('<iframe src="/iframe/"></iframe>');
+    })
+
+
+    </script>
+
+
+  </head>
+  <body>
+    {% block content %}
+
+    {% endblock %}
+
+  </body>
+</html>
