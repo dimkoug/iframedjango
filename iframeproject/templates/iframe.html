@@ -8,13 +8,21 @@
   </head>
   <script>
   $(document).ready(function(){
+    var secure = true;
+    var BASE_URL = 'http://127.0.0.1:8000';
     iframe_host = window.location.host;
     parent_host = document.referrer.split('/')[2];
     console.info(parent_host);
     console.info(iframe_host);
     if(parent_host != iframe_host){
       $('#frame').remove();
+      var secure = false;
+
     }
+    // send a message to the parent window to hide iframe div
+    setInterval(function() {
+    	parent.postMessage(secure,BASE_URL);
+    },1000);
   })
   </script>
   <body>
